@@ -8,10 +8,14 @@
             <h1><a href="/">Il Blog di un principiante</a></h1>
         </div>
 
+        
+        {% for post in posts %}
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Oggi 13/07/2020, inizio a scrivere il mio blog. Parlerò di tutte le mie passioni, dalla programmazione alla corsa, dalla pizza ai viaggi in bici. Parlerò anche di quello che mi succede, dei nuovi obiettivi che mi pongo e a come penso di raggiungerli. Sono una persona a cui piace provare nuove esperienze (fin troppo a volte) e che si ritrova sempre con il problema del principiante ..quello di non sapere da dove iniziare! Questo blog sarà al contempo una guida su come ho iniziato da principiante la mia carriera (se mai ce ne sarà una) da sviluppatore Blockchain. Buona visione!</p>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
         </div>
 
         <div>
